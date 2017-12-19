@@ -1,4 +1,5 @@
-// "This" lesson - individual exercise
+// "This" lesson
+// Individual exercise
 var coffeeShop = {
   beans: 40,
 
