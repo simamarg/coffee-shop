@@ -4,6 +4,8 @@ var COST_PER_BEAN = 10;
 
 var coffeeShop = {
     beans: 40,
+
+    money: 2000,
   
     drinkRequirements: {
       latte: 10,
@@ -13,17 +15,16 @@ var coffeeShop = {
     },
   
     makeDrink: function (drinkType) {
-        if (this.drinkRequirements[drinkType] !== undefined && this.beans - this.drinkRequirements[drinkType] >= 0) {
-            this.beans -= this.drinkRequirements[drinkType];
-            console.log(this.beans);
-        } else  if (this.drinkRequirements[drinkType] !== undefined) {
-            alert("Sorry, we're all out of beans!");
-        } else  {
+        if (!this.drinkRequirements[drinkType]) {
             alert("Sorry, we don't make " + drinkType);
         }
+        else if (this.beans - this.drinkRequirements[drinkType] >= 0) {
+            this.beans -= this.drinkRequirements[drinkType];
+            console.log(this.beans);
+        } else{
+            alert("Sorry, we're all out of beans!");
+        }
     },
-
-    money: 2000,
 
     buySupplies : function(beans) {
         if (this.money >= beans * COST_PER_BEAN) {

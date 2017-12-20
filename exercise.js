@@ -11,7 +11,7 @@ var coffeeShop = {
   },
 
   makeDrink: function (drinkType) {
-    if (this.drinkRequirements[drinkType] !== undefined) {
+    if (this.drinkRequirements[drinkType]) {
       if (this.beans - this.drinkRequirements[drinkType] >= 0) {
         this.beans -= this.drinkRequirements[drinkType];
         console.log(this.beans);
